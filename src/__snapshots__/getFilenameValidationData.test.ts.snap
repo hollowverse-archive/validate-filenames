@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getFilenameValidationData works for \`camelCase\` only 1`] = `
+exports[`getFilenameValidationData works for \`camelCase\` alone 1`] = `
 Array [
   Array [
     ".dockerignore",

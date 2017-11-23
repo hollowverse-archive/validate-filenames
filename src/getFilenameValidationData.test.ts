@@ -123,7 +123,56 @@ describe('getFilenameValidationData', () => {
     ]);
   });
 
-  it('works for `camelCase` only', () => {
+  it('consolidates pattern components correctly when it ignores filename components in the pattern', () => {
+    expect(
+      getFilenameValidationData(
+        ['src/app/pages/NavBar/NavBar.module.scss'],
+        [
+          {
+            validation: 'PascalCase',
+            patterns: ['src/app/components/**/*', 'src/app/pages/**/*'],
+          },
+        ],
+      ),
+    ).toEqual([
+      [
+        'src/app/pages/NavBar/NavBar.module.scss',
+        { valid: true, invalidComponents: [] },
+      ],
+    ]);
+  });
+
+  it('complains about camelCase or PascalCase that have two consecutive uppercase letters', () => {
+    expect(
+      getFilenameValidationData(
+        ['src/app/helloWOrld.ts'],
+        [
+          {
+            validation: 'camelCase',
+            patterns: ['**/*'],
+          },
+        ],
+      ),
+    ).toEqual([
+      ['src/app/helloWOrld.ts', { valid: false, invalidComponents: [2] }],
+    ]);
+
+    expect(
+      getFilenameValidationData(
+        ['src/app/HelloWOrld.ts'],
+        [
+          {
+            validation: 'PascalCase',
+            patterns: ['src/app/*'],
+          },
+        ],
+      ),
+    ).toEqual([
+      ['src/app/HelloWOrld.ts', { valid: false, invalidComponents: [2] }],
+    ]);
+  });
+
+  it('works for `camelCase` alone', () => {
     expect(
       getFilenameValidationData(filenames, [
         {
@@ -234,24 +283,5 @@ describe('getFilenameValidationData', () => {
         },
       ]),
     ).toMatchSnapshot();
-  });
-
-  it('ignores filename components which appear in the pattern correctly', () => {
-    expect(
-      getFilenameValidationData(
-        ['src/app/pages/NavBar/NavBar.module.scss'],
-        [
-          {
-            validation: 'PascalCase',
-            patterns: ['src/app/components/**/*', 'src/app/pages/**/*'],
-          },
-        ],
-      ),
-    ).toEqual([
-      [
-        'src/app/pages/NavBar/NavBar.module.scss',
-        { valid: true, invalidComponents: [] },
-      ],
-    ]);
   });
 });

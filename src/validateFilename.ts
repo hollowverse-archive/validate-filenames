@@ -4,6 +4,7 @@ import { flattenDeep, uniq, flow } from 'lodash';
 
 const camelCaseFilenameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
 const pascalCaseFilenameRegex = /^[.]?([A-Z])+([0-9]|[a-zA-Z]|[.])*$/;
+const twoConsecutiveUppercaseLettersRegex = /^.*[A-Z]{2}.*$/;
 
 const validationMap = new Map<Rule['validation'], RegExp>([
   ['camelCase', camelCaseFilenameRegex],
@@ -31,7 +32,8 @@ export function validateFilename(
     filename.split(path.sep).forEach((filenameComponent, index) => {
       if (
         !patternComponents.includes(filenameComponent) &&
-        !validationRegex.test(filenameComponent)
+        (!validationRegex.test(filenameComponent) ||
+          twoConsecutiveUppercaseLettersRegex.test(filenameComponent))
       ) {
         result.valid = false;
         result.invalidComponents.push(Number(index));
