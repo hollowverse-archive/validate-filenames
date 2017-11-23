@@ -1,5 +1,6 @@
 import { Rule, FilenameValidationResult } from './types';
 import * as path from 'path';
+import { flattenDeep, uniq, flow } from 'lodash';
 
 const camelCaseFilenameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
 const pascalCaseFilenameRegex = /^[.]?([A-Z])+([0-9]|[a-zA-Z]|[.])*$/;
@@ -21,9 +22,11 @@ export function validateFilename(
   const validationRegex = validationMap.get(rule.validation);
 
   if (validationRegex && rule.validation !== 'ignore') {
-    const patternComponents = [
-      ...new Set(...rule.patterns.map(pattern => pattern.split(path.sep))),
-    ];
+    const patternComponents = flow(
+      (patterns: string[]) => patterns.map(pattern => pattern.split(path.sep)),
+      flattenDeep,
+      uniq,
+    )(rule.patterns);
 
     filename.split(path.sep).forEach((filenameComponent, index) => {
       if (
