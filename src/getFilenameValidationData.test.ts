@@ -1,7 +1,7 @@
 /* tslint:disable:mocha-no-side-effect-code mocha-avoid-only */
 
 import { getFilenameValidationData } from './getFilenameValidationData';
-// import { testCases } from '../fixtures';
+import { filenames } from '../fixtures';
 
 describe('getFilenameValidationData', () => {
   it('returns valid = true when filename is valid', () => {
@@ -93,7 +93,7 @@ describe('getFilenameValidationData', () => {
     ).toEqual([['helloWorld.ts', { valid: false, invalidComponents: [0] }]]);
   });
 
-  it.only('does not validate components that appear in the pattern', () => {
+  it('does not validate components that appear in the pattern', () => {
     expect(
       getFilenameValidationData(
         ['src/app/HelloWorld.ts'],
@@ -120,6 +120,138 @@ describe('getFilenameValidationData', () => {
       ),
     ).toEqual([
       ['src/app/helloWorld.ts', { valid: false, invalidComponents: [2] }],
+    ]);
+  });
+
+  it('works for `camelCase` only', () => {
+    expect(
+      getFilenameValidationData(filenames, [
+        {
+          validation: 'camelCase',
+          patterns: ['**/*'],
+        },
+      ]),
+    ).toMatchSnapshot();
+  });
+
+  it('works when we ignore certain patterns', () => {
+    expect(
+      getFilenameValidationData(filenames, [
+        {
+          validation: 'camelCase',
+          patterns: ['**/*'],
+        },
+
+        {
+          validation: 'ignore',
+          patterns: [
+            '*/**/typings/*',
+            '_*.scss',
+            'Dockerfile*',
+            'docker-compose.yml',
+            '**/LICENSE.md',
+            '**/README.md',
+          ],
+        },
+      ]),
+    ).toMatchSnapshot();
+  });
+
+  it('works when we ignore certain patterns', () => {
+    expect(
+      getFilenameValidationData(filenames, [
+        {
+          validation: 'camelCase',
+          patterns: ['**/*'],
+        },
+
+        {
+          validation: 'ignore',
+          patterns: [
+            '*/**/typings/*',
+            '_*.scss',
+            'Dockerfile*',
+            'docker-compose.yml',
+            '**/LICENSE.md',
+            '**/README.md',
+          ],
+        },
+      ]),
+    ).toMatchSnapshot();
+  });
+
+  it('works when we specify different validation rules for different paths', () => {
+    expect(
+      getFilenameValidationData(filenames, [
+        {
+          validation: 'camelCase',
+          patterns: ['**/*'],
+        },
+
+        {
+          validation: 'PascalCase',
+          patterns: ['src/app/components/**/*.tsx'],
+        },
+
+        {
+          validation: 'ignore',
+          patterns: [
+            '*/**/typings/*',
+            '_*.scss',
+            'Dockerfile*',
+            'docker-compose.yml',
+            '**/LICENSE.md',
+            '**/README.md',
+          ],
+        },
+      ]),
+    ).toMatchSnapshot();
+  });
+
+  it('works when we fine-tune the rules for the filenames so everything is valid', () => {
+    expect(
+      getFilenameValidationData(filenames, [
+        {
+          validation: 'camelCase',
+          patterns: ['**/*'],
+        },
+
+        {
+          validation: 'PascalCase',
+          patterns: ['src/app/components/**/*', 'src/app/pages/**/*'],
+        },
+
+        {
+          validation: 'ignore',
+          patterns: [
+            '*/**/typings/*',
+            '_*.scss',
+            'Dockerfile*',
+            'docker-compose.yml',
+            '**/LICENSE.md',
+            '**/README.md',
+          ],
+        },
+      ]),
+    ).toMatchSnapshot();
+  });
+
+  it('ignores filename components which appear in the pattern correctly', () => {
+    expect(
+      getFilenameValidationData(
+        ['src/app/pages/NavBar/NavBar.module.scss'],
+        [
+          {
+            validation: 'PascalCase',
+            patterns: ['src/app/components/**/*', 'src/app/pages/**/*'],
+          },
+        ],
+      ),
+    ).toEqual([
+      [
+        'src/app/pages/NavBar/NavBar.module.scss',
+        { valid: true, invalidComponents: [] },
+      ],
     ]);
   });
 });
