@@ -1,4 +1,4 @@
-const filenames = [
+export const filenames = [
   // dot file
   '.dockerignore',
 
@@ -37,41 +37,13 @@ const filenames = [
 
   // Pascal case (src/app/components/)
   'src/app/components/App/App.global.scss',
-  'src/app/components/App/App.module.scss',
-  'src/app/components/NavBar/NavBar.module.scss',
-  'src/app/components/NavBar/NavBar.tsx',
+  'src/app/components/App/App.tsx',
+
+  // Pascal case (src/app/pages)
+  'src/app/pages/NavBar/NavBar.module.scss',
+  'src/app/pages/NavBar/NavBar.tsx',
 
   // Snake case (src/typings/)
   'src/typings/shrink-ray.d.ts',
   'src/typings/webpack-hot-server-middleware.d.ts',
-];
-
-export const testCase1 = [
-  {
-    input: {
-      filenames,
-      rules: [
-        {
-          validation: 'camelCase',
-          patterns: ['**/*'],
-        },
-        {
-          validation: 'PascalCase',
-          patterns: ['src/app/components/**/*.tsx'],
-        },
-        {
-          validation: 'ignore',
-          patterns: [
-            '*/**/typings/*',
-            '_*.scss',
-            'Dockerfile*',
-            'docker-compose.yml',
-            '**/LICENSE.md',
-            '**/README.md',
-          ],
-        },
-      ],
-    },
-    results: [['']],
-  },
 ];
