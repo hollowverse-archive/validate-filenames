@@ -12,10 +12,12 @@
   "dependencies": {
     "@hollowverse/common": "hollowverse/common#export-common-binaries",
     "@types/node": "^8.0.53",
+    "lodash": "^4.17.4",
     "minimatch": "^3.0.4"
   },
   "devDependencies": {
     "@types/jest": "^21.1.5",
+    "@types/lodash": "^4.14.85",
     "@types/minimatch": "^3.0.1",
     "jest": "^21.2.1",
     "ts-jest": "^21.1.4"
