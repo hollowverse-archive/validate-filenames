@@ -1,0 +1,36 @@
+{
+  "name": "@hollowverse/validate-filenames",
+  "version": "1.0.0",
+  "description": "CLI for validating filenames in a directory according to customizable rules",
+  "repository": "git@github.com:hollowverse/validate-filenames.git",
+  "author": "Hollowverse",
+  "license": "Unlicense",
+  "scripts": {
+    "test": "jest"
+  },
+  "private": false,
+  "dependencies": {
+    "@hollowverse/common": "hollowverse/common#export-common-binaries",
+    "@types/node": "^8.0.53",
+    "minimatch": "^3.0.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.5",
+    "@types/minimatch": "^3.0.1",
+    "jest": "^21.2.1",
+    "ts-jest": "^21.1.4"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  }
+}
