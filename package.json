@@ -12,6 +12,9 @@
     "dev": "tsc --watch",
     "lint-staged": "lint-staged"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "validate-filenames": "./bin/validateFilenames.js"
   },
