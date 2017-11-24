@@ -1,7 +1,8 @@
 {
   "name": "@hollowverse/validate-filenames",
   "version": "1.0.0",
-  "description": "CLI for validating filenames in a directory according to customizable rules",
+  "description":
+    "CLI for validating filenames in a directory according to customizable rules",
   "repository": "git@github.com:hollowverse/validate-filenames.git",
   "author": "Hollowverse",
   "license": "Unlicense",
@@ -13,9 +14,21 @@
     "postversion": "git push && git push --tags && yarn publish"
   },
   "private": false,
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": 4
+          },
+          "useBuiltins": true
+        }
+      ]
+    ]
+  },
   "dependencies": {
-    "@hollowverse/common": "hollowverse/common#export-common-binaries",
-    "@types/node": "^8.0.53",
+    "@hollowverse/common": "hollowverse/common",
     "babel-polyfill": "^6.26.0",
     "commander": "^2.12.1",
     "lodash": "^4.17.4",
@@ -23,25 +36,41 @@
     "shelljs": "^0.7.8"
   },
   "devDependencies": {
+    "@types/node": "^8.0.53",
     "@types/commander": "^2.11.0",
     "@types/jest": "^21.1.5",
     "@types/lodash": "^4.14.85",
     "@types/minimatch": "^3.0.1",
     "@types/shelljs": "^0.7.6",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "jest": "^21.2.1",
-    "ts-jest": "^21.1.4"
+    "ts-jest": "^21.1.4",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "lint-staged": "^4.0.3",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.5.3",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-no-unsupported-browser-features": "^1.0.0",
+    "tslint": "^5.5.0",
+    "tslint-config-prettier": "^1.1.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "tslint-react": "^3.0.0",
+    "typescript": "^2.4.2"
   },
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ]
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"]
   }
 }
