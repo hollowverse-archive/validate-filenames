@@ -1,0 +1,628 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getFilenameValidationData works for \`camelCase\` alone 1`] = `
+Array [
+  Array [
+    ".dockerignore",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    ".elasticbeanstalk/config.yml",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "Dockerfile",
+    Object {
+      "invalidComponents": Array [
+        0,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "Dockerfile-dev",
+    Object {
+      "invalidComponents": Array [
+        0,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "README.md",
+    Object {
+      "invalidComponents": Array [
+        0,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "build.js",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "commonconfig.js",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "database.rules.json",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "docker-compose.yml",
+    Object {
+      "invalidComponents": Array [
+        0,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "secrets/sumo.json.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "secrets/sumo.json.enc",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/.babelrc",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/_variables.scss",
+    Object {
+      "invalidComponents": Array [
+        2,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/app/clientEntry.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/components/App/App.global.scss",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/app/components/App/App.tsx",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/app/pages/NavBar/NavBar.module.scss",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/app/pages/NavBar/NavBar.tsx",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/typings/shrink-ray.d.ts",
+    Object {
+      "invalidComponents": Array [
+        2,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/typings/webpack-hot-server-middleware.d.ts",
+    Object {
+      "invalidComponents": Array [
+        2,
+      ],
+      "valid": false,
+    },
+  ],
+]
+`;
+
+exports[`getFilenameValidationData works when we fine-tune the rules for the filenames so everything is valid 1`] = `
+Array [
+  Array [
+    ".dockerignore",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    ".elasticbeanstalk/config.yml",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "Dockerfile",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "Dockerfile-dev",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "README.md",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "build.js",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "commonconfig.js",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "database.rules.json",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "docker-compose.yml",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "secrets/sumo.json.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "secrets/sumo.json.enc",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/.babelrc",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/_variables.scss",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/clientEntry.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/components/App/App.global.scss",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/components/App/App.tsx",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/pages/NavBar/NavBar.module.scss",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/pages/NavBar/NavBar.tsx",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/typings/shrink-ray.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/typings/webpack-hot-server-middleware.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+]
+`;
+
+exports[`getFilenameValidationData works when we ignore certain patterns 1`] = `
+Array [
+  Array [
+    ".dockerignore",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    ".elasticbeanstalk/config.yml",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "Dockerfile",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "Dockerfile-dev",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "README.md",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "build.js",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "commonconfig.js",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "database.rules.json",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "docker-compose.yml",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "secrets/sumo.json.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "secrets/sumo.json.enc",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/.babelrc",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/_variables.scss",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/clientEntry.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/components/App/App.global.scss",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/app/components/App/App.tsx",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/app/pages/NavBar/NavBar.module.scss",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/app/pages/NavBar/NavBar.tsx",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/typings/shrink-ray.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/typings/webpack-hot-server-middleware.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+]
+`;
+
+exports[`getFilenameValidationData works when we specify different validation rules for different paths 1`] = `
+Array [
+  Array [
+    ".dockerignore",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    ".elasticbeanstalk/config.yml",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "Dockerfile",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "Dockerfile-dev",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "README.md",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "build.js",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "commonconfig.js",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "database.rules.json",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "docker-compose.yml",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "secrets/sumo.json.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "secrets/sumo.json.enc",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/.babelrc",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/_variables.scss",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/clientEntry.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/components/App/App.global.scss",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/app/components/App/App.tsx",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/app/pages/NavBar/NavBar.module.scss",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/app/pages/NavBar/NavBar.tsx",
+    Object {
+      "invalidComponents": Array [
+        3,
+        4,
+      ],
+      "valid": false,
+    },
+  ],
+  Array [
+    "src/typings/shrink-ray.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+  Array [
+    "src/typings/webpack-hot-server-middleware.d.ts",
+    Object {
+      "invalidComponents": Array [],
+      "valid": true,
+    },
+  ],
+]
+`;
