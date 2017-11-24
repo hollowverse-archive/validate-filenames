@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-/* tslint:disable */
 require('babel-polyfill'); // tslint:disable-line
 
 import * as program from 'commander';
@@ -9,7 +8,7 @@ import { getFilenames } from './getFilenames';
 import { getFilenameValidationData } from './getFilenameValidationData';
 import {
   allFilenamesAreValid,
-  prettyPrintFilenamesValidationData,
+  prettyPrintFilenameValidationData,
   underline,
 } from './utils';
 
@@ -45,11 +44,6 @@ function main() {
     config.rules,
   );
 
-  console.log(
-    'allFilenamesAreValid(filenamesValidationData)',
-    allFilenamesAreValid(filenamesValidationData),
-  );
-
   if (allFilenamesAreValid(filenamesValidationData)) {
     console.log('All filenames are valid!');
     shelljs.exit(0);
@@ -59,6 +53,6 @@ function main() {
         'The file names below do not meet your validation rules:',
       )}\n`,
     );
-    console.log(prettyPrintFilenamesValidationData(filenamesValidationData));
+    console.log(prettyPrintFilenameValidationData(filenamesValidationData));
   }
 }

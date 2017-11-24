@@ -19,7 +19,7 @@ export function allFilenamesAreValid(
   });
 }
 
-export function prettyPrintFilenamesValidationData(
+export function prettyPrintFilenameValidationData(
   filenameValidationData: FilenameValidationData,
 ) {
   return (
