@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-require('babel-polyfill');
+
+/* tslint:disable */
+require('babel-polyfill'); // tslint:disable-line
 
 import * as program from 'commander';
 import * as shelljs from 'shelljs';
@@ -26,7 +28,7 @@ if (!program.config) {
 // Kick off the program
 main();
 
-/* tslint:disable:non-literal-require */
+/* tslint:disable:non-literal-require no-console */
 function main() {
   let config;
   const filenames = getFilenames();

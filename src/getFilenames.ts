@@ -11,5 +11,6 @@ export function getFilenames() {
 
   console.error('Unable to read git tree, is this a git repository?');
   shelljs.exit(1);
+
   return [];
 }
