@@ -10,10 +10,14 @@
     "lint": "tslint './*.ts' 'src/**/*.ts' --project tsconfig.json",
     "build": "tsc && babel bin -d bin",
     "dev": "tsc --watch",
-    "version": "yarn build && git add -A bin",
-    "postversion": "git push && git push --tags && yarn publish",
     "lint-staged": "lint-staged"
   },
+  "bin": {
+    "validate-filenames": "./bin/validateFilenames.js"
+  },
+  "eslintIgnore": [
+    "bin/**/*"
+  ],
   "private": false,
   "babel": {
     "presets": [
@@ -29,20 +33,11 @@
     ]
   },
   "lint-staged": {
-    "**/*.ts{x,}": [
-      "tslint -p ./tsconfig.json"
-    ],
-    "**/*.js{x,}": [
-      "eslint"
-    ],
-    "**/*.{j,t}s{x,}": [
-      "prettier --write",
-      "git add"
-    ]
+    "**/*.ts{x,}": ["tslint -p ./tsconfig.json"],
+    "**/*.js{x,}": ["eslint"],
+    "**/*.{j,t}s{x,}": ["prettier --write", "git add"]
   },
-  "pre-commit": [
-    "lint-staged"
-  ],
+  "pre-commit": ["lint-staged"],
   "dependencies": {
     "@hollowverse/common": "hollowverse/common",
     "babel-polyfill": "^6.26.0",
@@ -87,12 +82,6 @@
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ]
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"]
   }
 }

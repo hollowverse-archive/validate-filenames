@@ -5,7 +5,7 @@ export function getFilenames() {
   const { stdout } = shelljs.exec('git ls-files', { silent: true });
 
   if (typeof stdout === 'string') {
-    // remove empty strings from the array and remove files in ignored paths
+    // remove empty strings from the array
     return stdout.split('\n').filter(file => file.length !== 0);
   }
 

@@ -6,6 +6,7 @@ import * as program from 'commander';
 import * as shelljs from 'shelljs';
 import { getFilenames } from './getFilenames';
 import { getFilenameValidationData } from './getFilenameValidationData';
+import { defaultConfig } from './defaultConfig';
 import {
   allFilenamesAreValid,
   prettyPrintFilenameValidationData,
@@ -14,15 +15,9 @@ import {
 
 // Setup arguments through the commander.js CLI framework
 program
-  .usage('-c [path]')
-  .option('-c, --config [path]', 'path to config file (a JS module)')
+  .usage('-c <path>')
+  .option('-c, --config <path>', 'path to config file (a JS module)')
   .parse(process.argv);
-
-// If user doesn't provide any arguments, we'll display help
-if (!program.config) {
-  program.outputHelp();
-  shelljs.exit(1);
-}
 
 // Kick off the program
 main();
@@ -35,8 +30,11 @@ function main() {
   try {
     config = require(`${process.cwd()}/${program.config}`);
   } catch (e) {
-    console.error('Could not read configurations file');
-    shelljs.exit(1);
+    console.error(
+      'Could not read configurations file. Falling back on default configurations.',
+    );
+
+    config = defaultConfig;
   }
 
   const filenamesValidationData = getFilenameValidationData(
@@ -45,7 +43,6 @@ function main() {
   );
 
   if (allFilenamesAreValid(filenamesValidationData)) {
-    console.log('All filenames are valid!');
     shelljs.exit(0);
   } else {
     console.log(
