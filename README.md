@@ -1,4 +1,4 @@
-# `@hollowverse/validate-filenames`
+# `@hollowverse/validate-filenames` [![Build Status](https://travis-ci.org/hollowverse/validate-filenames.svg?branch=master)](https://travis-ci.org/hollowverse/validate-filenames)
 
 You can use this package to validate that the filenames in your git repository
 meet your validation rules.
