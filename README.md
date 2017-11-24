@@ -3,7 +3,7 @@
 You can use this package to validate that the filenames in your git repository
 meet your validation rules.
 
-Current validation rules are `camelCase` and `PascalCase`.
+Current validation rules are `camelCase`, `PascalCase`, and `ignore`.
 
 ## Installation
 

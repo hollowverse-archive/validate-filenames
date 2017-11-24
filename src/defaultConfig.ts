@@ -1,6 +1,6 @@
 import { Rule } from './types';
 
-export const defaultConfig2: { rules: Rule[] } = {
+export const defaultConfig: { rules: Rule[] } = {
   rules: [
     {
       validation: 'camelCase',
