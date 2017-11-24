@@ -1,5 +1,3 @@
-/* tslint:disable:mocha-no-side-effect-code mocha-avoid-only */
-
 import { getFilenameValidationData } from './getFilenameValidationData';
 import { filenames } from '../fixtures';
 
@@ -178,29 +176,6 @@ describe('getFilenameValidationData', () => {
         {
           validation: 'camelCase',
           patterns: ['**/*'],
-        },
-      ]),
-    ).toMatchSnapshot();
-  });
-
-  it('works when we ignore certain patterns', () => {
-    expect(
-      getFilenameValidationData(filenames, [
-        {
-          validation: 'camelCase',
-          patterns: ['**/*'],
-        },
-
-        {
-          validation: 'ignore',
-          patterns: [
-            '*/**/typings/*',
-            '_*.scss',
-            'Dockerfile*',
-            'docker-compose.yml',
-            '**/LICENSE.md',
-            '**/README.md',
-          ],
         },
       ]),
     ).toMatchSnapshot();
