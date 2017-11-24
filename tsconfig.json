@@ -1,4 +1,10 @@
 {
   "extends": "./node_modules/@hollowverse/common/tsconfig.json",
-  "exclude": ["dist", "node_modules"]
+  "compilerOptions": {
+    "maxNodeModuleJsDepth": 0,
+    "baseUrl": "./src",
+    "outDir": "./bin"
+  },
+  "include": ["./src"],
+  "exclude": ["./src/**/*.test.ts"]
 }
