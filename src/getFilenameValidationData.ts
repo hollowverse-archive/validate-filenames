@@ -1,6 +1,10 @@
 import * as minimatch from 'minimatch';
-import { validateFilename } from './validateFilename';
-import { Rule, FilenameValidationResult } from './types';
+import { validateFilenameAgainstRule } from './validateFilenameAgainstRule';
+import {
+  Rule,
+  FilenameValidationResult,
+  FilenameValidationData,
+} from './types';
 
 function filenameMatchesPattern(filename: string, pattern: string) {
   return minimatch(filename, pattern, { matchBase: true });
@@ -33,9 +37,9 @@ export function getFilenameValidationData(filenames: string[], rules: Rule[]) {
     const lastApplicableRule = getLastApplicableRule(filename, rules);
 
     if (lastApplicableRule) {
-      result = validateFilename(filename, lastApplicableRule);
+      result = validateFilenameAgainstRule(filename, lastApplicableRule);
     }
 
-    return [filename, result];
+    return [filename, result] as [string, FilenameValidationResult];
   });
 }

@@ -11,7 +11,7 @@ const validationMap = new Map<Rule['validation'], RegExp>([
   ['PascalCase', pascalCaseFilenameRegex],
 ]);
 
-export function validateFilename(
+export function validateFilenameAgainstRule(
   filename: string,
   rule: Rule,
 ): FilenameValidationResult {

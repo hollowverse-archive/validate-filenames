@@ -7,3 +7,7 @@ export type FilenameValidationResult = {
   valid: boolean;
   invalidComponents: number[];
 };
+
+export type FilenameValidationDatum = [string, FilenameValidationResult];
+
+export type FilenameValidationData = FilenameValidationDatum[];
