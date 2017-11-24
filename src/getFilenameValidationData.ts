@@ -1,10 +1,6 @@
 import * as minimatch from 'minimatch';
 import { validateFilenameAgainstRule } from './validateFilenameAgainstRule';
-import {
-  Rule,
-  FilenameValidationResult,
-  FilenameValidationData,
-} from './types';
+import { Rule, FilenameValidationResult } from './types';
 
 function filenameMatchesPattern(filename: string, pattern: string) {
   return minimatch(filename, pattern, { matchBase: true });
