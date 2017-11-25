@@ -3,6 +3,7 @@
 require('babel-polyfill'); // tslint:disable-line
 
 import * as program from 'commander';
+import * as path from 'path';
 import * as shelljs from 'shelljs';
 import { getFilenames } from './getFilenames';
 import { getFilenameValidationData } from './getFilenameValidationData';
@@ -28,7 +29,7 @@ function main() {
   const filenames = getFilenames();
 
   try {
-    config = require(`${process.cwd()}/${program.config}`);
+    config = require(path.join(process.cwd(), program.config));
   } catch (e) {
     console.error(
       'Could not read configurations file. Falling back on default configurations.',
