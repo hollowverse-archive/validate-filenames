@@ -52,5 +52,6 @@ function main() {
       )}\n`,
     );
     console.log(prettyPrintFilenameValidationData(filenamesValidationData));
+    process.exit(1);
   }
 }

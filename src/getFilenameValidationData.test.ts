@@ -1,5 +1,5 @@
 import { getFilenameValidationData } from './getFilenameValidationData';
-import { filenames } from '../fixtures';
+import { filenames } from './fixtures';
 
 describe('getFilenameValidationData', () => {
   it('returns valid = true when filename is valid', () => {

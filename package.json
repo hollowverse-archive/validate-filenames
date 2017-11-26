@@ -1,6 +1,6 @@
 {
   "name": "@hollowverse/validate-filenames",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "CLI for validating filenames in a directory according to customizable rules",
   "repository": "git@github.com:hollowverse/validate-filenames.git",
   "author": "Hollowverse",
@@ -16,7 +16,7 @@
     "access": "public"
   },
   "bin": {
-    "validate-filenames": "./bin/src/validateFilenames.js"
+    "validate-filenames": "./bin/validateFilenames.js"
   },
   "eslintIgnore": [
     "bin/**/*"
@@ -89,6 +89,10 @@
     "tslint-react": "^3.0.0",
     "typescript": "^2.4.2"
   },
+  "files": [
+    "bin",
+    "package.json"
+  ],
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
