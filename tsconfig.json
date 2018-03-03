@@ -3,7 +3,8 @@
   "compilerOptions": {
     "maxNodeModuleJsDepth": 0,
     "outDir": "./bin",
-    "sourceMap": false
+    "sourceMap": false,
+    "module": "esnext"
   },
   "include": ["src"]
 }
