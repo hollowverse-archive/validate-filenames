@@ -1,4 +1,4 @@
-import * as minimatch from 'minimatch';
+import minimatch from 'minimatch';
 import { validateFilenameAgainstRule } from './validateFilenameAgainstRule';
 import { Rule, FilenameValidationResult } from './types';
 

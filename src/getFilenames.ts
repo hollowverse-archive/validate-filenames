@@ -6,7 +6,7 @@ export function getFilenames() {
 
   if (typeof stdout === 'string') {
     // remove empty strings from the array
-    return stdout.split("\u0000").filter(file => file.length !== 0);
+    return stdout.split('\u0000').filter(file => file.length !== 0);
   }
 
   console.error('Unable to read git tree, is this a git repository?');

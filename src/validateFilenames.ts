@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('babel-polyfill'); // tslint:disable-line
+import '@babel/polyfill'; // tslint:disable-line:no-implicit-dependencies
 
 import * as program from 'commander';
 import * as path from 'path';
