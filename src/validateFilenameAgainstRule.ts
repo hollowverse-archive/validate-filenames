@@ -1,5 +1,5 @@
 import { Rule, FilenameValidationResult } from './types';
-import * as path from 'path';
+import path from 'path';
 import { flattenDeep, uniq, flow } from 'lodash';
 
 const camelCaseFilenameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;

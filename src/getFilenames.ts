@@ -1,4 +1,4 @@
-import * as shelljs from 'shelljs';
+import shelljs from 'shelljs';
 
 export function getFilenames() {
   // Let's only validate files managed by git

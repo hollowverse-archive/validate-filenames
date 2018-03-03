@@ -2,9 +2,9 @@
 
 import '@babel/polyfill'; // tslint:disable-line:no-implicit-dependencies
 
-import * as program from 'commander';
-import * as path from 'path';
-import * as shelljs from 'shelljs';
+import program from 'commander';
+import path from 'path';
+import shelljs from 'shelljs';
 import { getFilenames } from './getFilenames';
 import { getFilenameValidationData } from './getFilenameValidationData';
 import { defaultConfig } from './defaultConfig';
