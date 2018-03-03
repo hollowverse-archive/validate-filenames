@@ -1,5 +1,5 @@
 import { FilenameValidationData } from './types';
-import * as path from 'path';
+import path from 'path';
 
 export function underline(text: string) {
   return `\x1b[4m${text}\x1b[0m`;
