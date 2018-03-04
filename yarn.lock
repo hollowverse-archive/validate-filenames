@@ -470,9 +470,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@hollowverse/common@^3.2.4":
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/@hollowverse/common/-/common-3.2.4.tgz#ed0f1ec944c059b521c19e67aaa078c95712f92a"
+"@hollowverse/common@^3.2.5":
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/@hollowverse/common/-/common-3.2.5.tgz#13c79c245dc0c53e977eddf160c64a69e9e03c89"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.40"
     glob "^7.1.2"
