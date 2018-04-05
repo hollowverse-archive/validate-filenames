@@ -5,6 +5,8 @@ node_js:
 
 script: yarn && yarn test && yarn build
 
+before_deploy: yarn set-version
+
 deploy:
   provider: npm
   email: "npm@hollowverse.com"

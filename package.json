@@ -7,10 +7,17 @@
   "license": "Unlicense",
   "scripts": {
     "test": "jest",
-    "lint": "tslint './*.ts' 'src/**/*.ts' --project tsconfig.json",
     "build": "tsc && babel bin -d bin",
     "dev": "tsc --watch",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "clown": "clown",
+    "pre-push": "yarn test",
+    "pre-commit": "yarn pretest",
+    "validate-filenames": "validate-filenames --config validateFilenames.js",
+    "check-ts": "tsc --project . --noEmit",
+    "tslint": "tslint 'src/**/*.ts' --project .",
+    "pretest": "run-p -c --aggregate-output tslint validate-filenames lint-staged 'clown check'",
+    "set-version": "set-version"
   },
   "publishConfig": {
     "access": "public"
@@ -49,16 +56,28 @@
     "**/*.{j,t}s{x,}": [
       "prettier --write",
       "git add"
+    ],
+    "**/*.md": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/!(package).json": [
+      "prettier --write",
+      "git add"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged",
-      "pre-push": "yarn test"
+      "pre-commit": "yarn pre-commit",
+      "pre-push": "yarn pre-push",
+      "post-merge": "yarnhook",
+      "post-checkout": "yarnhook",
+      "post-rewrite": "yarnhook"
     }
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
+    "@hollowverse/config": "^6.0.0",
     "commander": "^2.12.1",
     "lodash": "^4.17.4",
     "minimatch": "^3.0.4",
@@ -70,7 +89,9 @@
     "@babel/plugin-transform-runtime": "^7.0.0-beta.40",
     "@babel/polyfill": "^7.0.0-beta.40",
     "@babel/preset-env": "^7.0.0-beta.40",
-    "@hollowverse/config": "^4.0.0",
+    "@hollowverse/clown": "^0.0.3",
+    "@hollowverse/utils": "^5.0.1",
+    "@hollowverse/validate-filenames": "^1.4.0",
     "@types/commander": "^2.11.0",
     "@types/jest": "^21.1.5",
     "@types/lodash": "^4.14.85",
@@ -87,20 +108,22 @@
     "husky": "^0.15.0-rc.8",
     "jest": "^22.4.2",
     "lint-staged": "^7.0.0",
-    "prettier": "^1.11.1",
+    "npm-run-all": "^4.0.2",
+    "prettier": "^1.10.2",
     "rxjs": "^5.0.0",
-    "rxjs-tslint-rules": "^3.14.0",
+    "rxjs-tslint-rules": "^3.12.0",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
     "stylelint-no-unsupported-browser-features": "^1.0.0",
     "ts-jest": "^22.4.1",
     "tslint": "^5.9.1",
-    "tslint-config-prettier": "^1.9.0",
-    "tslint-eslint-rules": "^5.1.0",
+    "tslint-config-prettier": "^1.8.0",
+    "tslint-eslint-rules": "^5.0.0",
     "tslint-microsoft-contrib": "^5.0.3",
     "tslint-react": "^3.5.1",
-    "typescript": "^2.7.2",
-    "typescript-eslint-parser": "^14.0.0"
+    "typescript": "^2.8.1",
+    "typescript-eslint-parser": "^14.0.0",
+    "yarnhook": "^0.1.1"
   },
   "files": [
     "bin",
