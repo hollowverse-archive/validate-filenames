@@ -16,7 +16,8 @@
     "validate-filenames": "validate-filenames --config validateFilenames.js",
     "check-ts": "tsc --project . --noEmit",
     "tslint": "tslint 'src/**/*.ts' --project .",
-    "pretest": "run-p -c --aggregate-output tslint validate-filenames lint-staged 'clown check'"
+    "pretest": "run-p -c --aggregate-output tslint validate-filenames lint-staged 'clown check'",
+    "set-version": "set-version"
   },
   "publishConfig": {
     "access": "public"
@@ -89,6 +90,7 @@
     "@babel/polyfill": "^7.0.0-beta.40",
     "@babel/preset-env": "^7.0.0-beta.40",
     "@hollowverse/clown": "^0.0.3",
+    "@hollowverse/utils": "^5.0.1",
     "@hollowverse/validate-filenames": "^1.4.0",
     "@types/commander": "^2.11.0",
     "@types/jest": "^21.1.5",
