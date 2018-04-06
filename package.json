@@ -1,6 +1,6 @@
 {
   "name": "@hollowverse/validate-filenames",
-  "version": "1.4.0",
+  "version": "0.0.0-Set-by-CI-when-publishing",
   "description": "CLI for validating filenames in a directory according to customizable rules",
   "repository": "git@github.com:hollowverse/validate-filenames.git",
   "author": "Hollowverse",
@@ -17,7 +17,8 @@
     "check-ts": "tsc --project . --noEmit",
     "tslint": "tslint 'src/**/*.ts' --project .",
     "pretest": "run-p -c --aggregate-output tslint validate-filenames lint-staged 'clown check'",
-    "set-version": "set-version"
+    "set-version": "set-version",
+    "jest": "jest --colors"
   },
   "publishConfig": {
     "access": "public"
@@ -59,23 +60,23 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.40",
-    "@hollowverse/config": "^6.0.0",
+    "@babel/runtime": "^7.0.0-beta.44",
+    "@hollowverse/config": "file:../config",
     "commander": "^2.12.1",
     "lodash": "^4.17.4",
     "minimatch": "^3.0.4",
     "shelljs": "^0.7.8"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.40",
-    "@babel/core": "^7.0.0-beta.40",
-    "@babel/polyfill": "^7.0.0-beta.40",
-    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/polyfill": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
     "@hollowverse/clown": "^0.0.3",
     "@hollowverse/utils": "^5.0.1",
     "@hollowverse/validate-filenames": "^1.4.0",
     "@types/commander": "^2.11.0",
-    "@types/jest": "^21.1.5",
+    "@types/jest": "^22.2.0",
     "@types/lodash": "^4.14.85",
     "@types/minimatch": "^3.0.1",
     "@types/node": "^8.0.53",
@@ -89,7 +90,8 @@
     "ts-jest": "^22.4.1",
     "tslint": "^5.9.1",
     "typescript": "^2.8.1",
-    "yarnhook": "^0.1.1"
+    "yarnhook": "^0.1.1",
+    "@babel/node": "^7.0.0-beta.44"
   },
   "files": [
     "bin",
@@ -97,7 +99,7 @@
   ],
   "jest": {
     "transform": {
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
@@ -106,9 +108,17 @@
       "js",
       "jsx",
       "json"
-    ]
+    ],
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    }
   },
   "engines": {
     "node": ">= 4.0"
+  },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
   }
 }

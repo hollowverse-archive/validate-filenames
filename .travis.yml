@@ -5,7 +5,7 @@ node_js:
 
 script: yarn && yarn test && yarn build
 
-before_deploy: yarn set-version
+before_deploy: yarn set-version $TRAVIS_TAG
 
 deploy:
   provider: npm
