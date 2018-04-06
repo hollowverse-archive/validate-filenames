@@ -116,7 +116,7 @@
     }
   },
   "engines": {
-    "node": ">= 4.0"
+    "node": ">= 8.10"
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
