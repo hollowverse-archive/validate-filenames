@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import '@babel/polyfill'; // tslint:disable-line:no-implicit-dependencies
-
 import program from 'commander';
 import path from 'path';
 import shelljs from 'shelljs';

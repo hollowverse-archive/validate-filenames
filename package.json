@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.44",
-    "@hollowverse/config": "file:../config",
+    "@hollowverse/config": "^6.1.0",
     "commander": "^2.12.1",
     "lodash": "^4.17.4",
     "minimatch": "^3.0.4",
