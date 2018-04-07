@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.44",
-    "@hollowverse/config": "^6.1.0",
+    "@hollowverse/config": "^6.1.2",
     "commander": "^2.12.1",
     "lodash": "^4.17.4",
     "minimatch": "^3.0.4",
@@ -70,6 +70,7 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.44",
     "@babel/core": "^7.0.0-beta.44",
+    "@babel/node": "^7.0.0-beta.44",
     "@babel/polyfill": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.44",
     "@hollowverse/clown": "^0.0.3",
@@ -90,8 +91,7 @@
     "ts-jest": "^22.4.1",
     "tslint": "^5.9.1",
     "typescript": "^2.8.1",
-    "yarnhook": "^0.1.1",
-    "@babel/node": "^7.0.0-beta.44"
+    "yarnhook": "^0.1.1"
   },
   "files": [
     "bin",
