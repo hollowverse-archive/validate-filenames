@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "test": "jest",
+    "build": "tsc && babel bin -d bin",
     "pre-push": "yarn test",
     "pre-commit": "yarn pretest"
   }

@@ -1,6 +1,6 @@
 {
   "name": "@hollowverse/validate-filenames",
-  "version": "1.4.0",
+  "version": "0.0.0-Set-by-CI-when-publishing",
   "description": "CLI for validating filenames in a directory according to customizable rules",
   "repository": "git@github.com:hollowverse/validate-filenames.git",
   "author": "Hollowverse",
@@ -17,7 +17,8 @@
     "check-ts": "tsc --project . --noEmit",
     "tslint": "tslint 'src/**/*.ts' --project .",
     "pretest": "run-p -c --aggregate-output tslint validate-filenames lint-staged 'clown check'",
-    "set-version": "set-version"
+    "set-version": "set-version",
+    "jest": "jest --colors"
   },
   "publishConfig": {
     "access": "public"
@@ -29,23 +30,6 @@
     "bin/**/*"
   ],
   "private": false,
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": 4
-          },
-          "useBuiltIns": "entry"
-        }
-      ]
-    ],
-    "plugins": [
-      "@babel/transform-runtime"
-    ],
-    "sourceMap": true
-  },
   "lint-staged": {
     "**/*.ts{x,}": [
       "tslint -p ./tsconfig.json"
@@ -76,53 +60,37 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.40",
-    "@hollowverse/config": "^6.0.0",
+    "@babel/runtime": "^7.0.0-beta.44",
+    "@hollowverse/config": "^6.1.2",
     "commander": "^2.12.1",
     "lodash": "^4.17.4",
     "minimatch": "^3.0.4",
     "shelljs": "^0.7.8"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.40",
-    "@babel/core": "^7.0.0-beta.40",
-    "@babel/plugin-transform-runtime": "^7.0.0-beta.40",
-    "@babel/polyfill": "^7.0.0-beta.40",
-    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/node": "^7.0.0-beta.44",
+    "@babel/polyfill": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
     "@hollowverse/clown": "^0.0.3",
     "@hollowverse/utils": "^5.0.1",
     "@hollowverse/validate-filenames": "^1.4.0",
     "@types/commander": "^2.11.0",
-    "@types/jest": "^21.1.5",
+    "@types/jest": "^22.2.0",
     "@types/lodash": "^4.14.85",
     "@types/minimatch": "^3.0.1",
     "@types/node": "^8.0.53",
     "@types/shelljs": "^0.7.6",
-    "babel-eslint": "^8.2.2",
     "eslint": "^4.18.2",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
     "husky": "^0.15.0-rc.8",
     "jest": "^22.4.2",
     "lint-staged": "^7.0.0",
     "npm-run-all": "^4.0.2",
     "prettier": "^1.10.2",
-    "rxjs": "^5.0.0",
-    "rxjs-tslint-rules": "^3.12.0",
-    "stylelint": "^8.0.0",
-    "stylelint-config-standard": "^17.0.0",
-    "stylelint-no-unsupported-browser-features": "^1.0.0",
     "ts-jest": "^22.4.1",
     "tslint": "^5.9.1",
-    "tslint-config-prettier": "^1.8.0",
-    "tslint-eslint-rules": "^5.0.0",
-    "tslint-microsoft-contrib": "^5.0.3",
-    "tslint-react": "^3.5.1",
     "typescript": "^2.8.1",
-    "typescript-eslint-parser": "^14.0.0",
     "yarnhook": "^0.1.1"
   },
   "files": [
@@ -131,7 +99,7 @@
   ],
   "jest": {
     "transform": {
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
@@ -140,9 +108,17 @@
       "js",
       "jsx",
       "json"
-    ]
+    ],
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    }
   },
   "engines": {
-    "node": ">= 4.0"
+    "node": ">= 8.10"
+  },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
   }
 }
