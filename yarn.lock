@@ -704,9 +704,9 @@
     fast-extend "0.0.2"
     fs-monkey "^0.3.0"
 
-"@hollowverse/clown@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@hollowverse/clown/-/clown-2.0.1.tgz#fe3e2fff562d2666f0991806b10cf3b712215efa"
+"@hollowverse/clown@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@hollowverse/clown/-/clown-3.0.0.tgz#8f9e1b235703c80717695e46282d6ee1e1bcb9da"
   dependencies:
     "@babel/polyfill" "^7.0.0-beta.44"
     "@babel/runtime" "^7.0.0-beta.44"
@@ -871,6 +871,10 @@
   resolved "https://registry.yarnpkg.com/@types/commander/-/commander-2.11.0.tgz#7fc765ccad14827e2babd6a99583359ff3e40563"
   dependencies:
     "@types/node" "*"
+
+"@types/cosmiconfig@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/cosmiconfig/-/cosmiconfig-4.0.0.tgz#0bfa24fc423932fb1530bf605c50e192d259104e"
 
 "@types/glob@*":
   version "5.0.33"

@@ -8,15 +8,27 @@ Current validation rules are `camelCase`, `PascalCase`, and `ignore`.
 ## Installation
 
 ```bash
-yarn global add @hollowverse/validate-filenames
+yarn add @hollowverse/validate-filenames
+```
+
+## Add as an npm script
+
+In your `package.json`
+
+```json
+{
+  "scripts": {
+    "validate-filenames": "validate-filenames"
+  }
+}
 ```
 
 ## Usage
 
-Go to a git-managed repo and run:
+In a git-managed repo run:
 
 ```bash
-validate-filenames --config ./path/to/configFile.js
+yarn validate-filenames
 ```
 
 When you do that, the tool will retrieve a list of all the filenames under git
@@ -25,31 +37,33 @@ file.
 
 ## Config file
 
-The config file can be any file that exports a JavaScript module with the format
-you see below.
+You can configure validate-filenames by dropping a file called `validateFilenames.json`
+or `validateFilenames.js` at the root of your repo.
 
-_configFile.js_:
+validate-filenames can be configured as follows
 
-```js
-module.exports = {
-  rules: [
+```json
+{
+  "rules": [
     {
-      validation: 'camelCase',
-      patterns: ['**/*'],
+      "validation": "camelCase",
+      "patterns": ["**/*"]
     },
     {
-      validation: 'ignore',
-      patterns: [
-        'README.md',
-        'Dockerfile',
-        'LICENSE.md',
-        'customTypings/*',
-        'typings/*',
-      ],
-    },
-  ],
-};
+      "validation": "ignore",
+      "patterns": [
+        "README.md",
+        "Dockerfile",
+        "LICENSE.md",
+        "customTypings/*",
+        "typings/*"
+      ]
+    }
+  ]
+}
 ```
+
+If you're using the `js` version of the configurations, you need to export an object such as the above.
 
 Notice that `rules` is an array. Each item in the array is an object with two
 properties: `validation` and `patterns`.
@@ -71,3 +85,9 @@ The order of the rules matter. The last rule wins. This allows us to have
 general rules and override those general rules with specific rules for specific
 paths. In the example above, we're saying all filenames within our repo should
 be camelCased except for certain files which should be ignored.
+
+## For issues or questions
+
+A lot of the above may very well not make much sense. So feel free to post issues or questions here:
+
+https://github.com/hollowverse/hollowverse/issues
