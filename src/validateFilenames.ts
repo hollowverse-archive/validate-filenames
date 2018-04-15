@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import program from 'commander';
-import path from 'path';
 import shelljs from 'shelljs';
 import { getFilenames } from './getFilenames';
 import { getFilenameValidationData } from './getFilenameValidationData';
@@ -11,26 +9,26 @@ import {
   prettyPrintFilenameValidationData,
   underline,
 } from './utils';
+import cosmiconfig from 'cosmiconfig';
+import { Config } from './types';
 
-// Setup arguments through the commander.js CLI framework
-program
-  .usage('-c <path>')
-  .option('-c, --config <path>', 'path to config file (a JS module)')
-  .parse(process.argv);
-
-// Kick off the program
-main();
+const CONFIG_NAME = 'validateFilenames';
 
 /* tslint:disable:non-literal-require no-console */
 function main() {
-  let config;
   const filenames = getFilenames();
 
-  try {
-    config = require(path.join(process.cwd(), program.config));
-  } catch (e) {
+  let config = (cosmiconfig(CONFIG_NAME, {
+    packageProp: false,
+    rc: CONFIG_NAME,
+    rcExtensions: true,
+    js: CONFIG_NAME,
+    sync: true,
+  }).load() as any) as Config;
+
+  if (!config) {
     console.error(
-      'Could not read configurations file. Falling back on default configurations.',
+      'Could not read configuration file. Falling back on default configurations.',
     );
 
     config = defaultConfig;
@@ -53,3 +51,6 @@ function main() {
     process.exit(1);
   }
 }
+
+// Kick off the program
+main();

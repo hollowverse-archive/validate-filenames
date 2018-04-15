@@ -5,16 +5,11 @@ node_js:
 
 script: yarn && yarn test && yarn build
 
-before_deploy: yarn set-version $TRAVIS_TAG
-
 deploy:
-  provider: npm
-  email: "npm@hollowverse.com"
-  api_key: $NPM_AUTH_TOKEN
+  provider: script
   skip_cleanup: true
-  on:
-    tags: true
-    branch: master
+  script:
+    - yarn semantic-release
 
 cache: yarn
 

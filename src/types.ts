@@ -11,3 +11,7 @@ export type FilenameValidationResult = {
 export type FilenameValidationDatum = [string, FilenameValidationResult];
 
 export type FilenameValidationData = FilenameValidationDatum[];
+
+export type Config = {
+  rules: Rule[];
+};
