@@ -41,12 +41,7 @@ node_modules/
 # Builds
 dist
 
-# Editor configs
-.vscode
-
 bin
-.vscode/**/*
-!.vscode/launch.json
 
 secrets/**/*
 !secrets/**/*.enc
