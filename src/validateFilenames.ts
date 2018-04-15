@@ -17,21 +17,24 @@ const CONFIG_NAME = 'validateFilenames';
 /* tslint:disable:non-literal-require no-console */
 function main() {
   const filenames = getFilenames();
-
-  let config = (cosmiconfig(CONFIG_NAME, {
+  const result = cosmiconfig(CONFIG_NAME, {
     packageProp: false,
     rc: CONFIG_NAME,
     rcExtensions: true,
     js: CONFIG_NAME,
     sync: true,
-  }).load() as any) as Config;
+  }).load();
 
-  if (!config) {
+  let config: Config;
+
+  if (!result) {
     console.error(
       'Could not read configuration file. Falling back on default configurations.',
     );
 
     config = defaultConfig;
+  } else {
+    config = result.config as Config;
   }
 
   const filenamesValidationData = getFilenameValidationData(
