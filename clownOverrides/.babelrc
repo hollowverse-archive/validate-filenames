@@ -1,5 +1,4 @@
 {
-  "extends": "@hollowverse/config/babel/node/.babelrc",
   "presets": [
     [
       "@babel/env",

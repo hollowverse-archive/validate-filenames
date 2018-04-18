@@ -19,7 +19,11 @@
         "**/__snapshots__/**",
         "docker-compose.yml",
         "**/LICENSE",
-        "**/README.md"
+        "**/README.md",
+        "**/typings/**/*",
+        "**/__snapshots__/**/*",
+        "**/docker-compose.yml",
+        "**/Dockerfile*"
       ]
     }
   ]
