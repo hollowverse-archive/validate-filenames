@@ -86,8 +86,6 @@ general rules and override those general rules with specific rules for specific
 paths. In the example above, we're saying all filenames within our repo should
 be camelCased except for certain files which should be ignored.
 
-## For issues or questions
+---
 
-A lot of the above may very well not make much sense. So feel free to post issues or questions here:
-
-https://github.com/hollowverse/hollowverse/issues
+[If you'd like to tell us something, or need help with anything...](https://github.com/hollowverse/hollowverse/wiki/Help)
